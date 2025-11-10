@@ -1,126 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="Assets/Logo/logo.png" />
-  <link rel="stylesheet" href="paymentstyle.css">
-  <title>Payment</title>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="Assets/Logo/logo.png" />
+    <link rel="stylesheet" href="paymentstyle.css">
+    <title>Payment</title>
+    </head>
+    <body>
 
-  <div class="container">
-    <h1 class="page-title">Payment Methods</h1>
-    <div class="button-container">
-      <div class="payment-card">
-        <img src="Assets/Logo/esewalogo.png" alt="eSewa Logo">
-        <h2>eSewa</h2>
-        <p>Fast and secure mobile payment through eSewa.</p>
-        <button class="view-btn esewa" onclick="showModal('esewaModal')">View eSewa QR</button>
-      </div>
+        <div class="container">
+            <b><strong><h1><span class="white1_text"> Payment Methods</span></h1></strong></b>
+            <div class="button-container">
+                <button class="payment-button esewa" onclick="showModal('esewaModal')">
+                    <img src="Assets/Logo/esewalogo.png" alt="eSewa Logo"> <span class="green_text"> Pay with <span class="white_text">  eSewa </span> </span>
+                </button>
+                <button class="payment-button imepay" onclick="showModal('imepayModal')">
+                    <img src="Assets/Logo/imepaylogo.png" alt="IMEPay Logo"> <span class="white_text"> Pay with IMEPay</span>
+                </button>
+                <button class="payment-button khalti" onclick="showModal('khaltiModal')">
+                    <img src="Assets/Logo/Khaltilogo.png" alt="Khalti Logo"> <span class="yellow_text"> Pay with Khalti</span>
+                </button>
+                <button class="payment-button bank" onclick="showModal('bankModal')">
+                    <img src="Assets/Logo/siddharthabanklogo.png" alt="Bank Logo"> <span class="black_text"> Pay with Bank</span>
+                </button>
+                <button class="payment-button paypal" onclick="showModal('paypalModal')">
+                    <img src="Assets/Logo/paypal.png" alt="paypal Logo"> <span class="white_text"> Pay with PayPal</span>
+                </button>
+                <button class="payment-button payoneer" onclick="showModal('payoneerModal')">
+                    <img src="Assets/Logo/payoneer.png" alt="payoneer Logo"> <span class="black_text"> Pay with Payoneer</span>
+                </button>
+            </div>
+        </div>
 
-      <div class="payment-card">
-        <img src="Assets/Logo/imepaylogo.png" alt="IMEPay Logo">
-        <h2>IMEPay</h2>
-        <p>Pay directly from your IMEPay wallet in seconds.</p>
-        <button class="view-btn imepay" onclick="showModal('imepayModal')">View IMEPay QR</button>
-      </div>
+        <!-- Modals for QR Codes -->
+        <div id="esewaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('esewaModal')">&times;</span>
+                <h2>eSewa Payment</h2>
+                <img src="Assets/Logo/Esewa.jpg" alt="eSewa QR Code">
+            </div>
+        </div>
 
-      <div class="payment-card">
-        <img src="Assets/Logo/Khaltilogo.png" alt="Khalti Logo">
-        <h2>Khalti</h2>
-        <p>Quick and easy digital payment via Khalti.</p>
-        <button class="view-btn khalti" onclick="showModal('khaltiModal')">View Khalti QR</button>
-      </div>
+        <div id="imepayModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('imepayModal')">&times;</span>
+                <h2>IMEPay Payment</h2>
+                <img src="Assets/Logo/IMEPAY.png" alt="IMEPay QR Code">
+            </div>
+        </div>
 
-      <div class="payment-card">
-        <img src="Assets/Logo/siddharthabanklogo.png" alt="Bank Logo">
-        <h2>Bank Transfer</h2>
-        <p>Make direct payments via your bank account.</p>
-        <button class="view-btn bank" onclick="showModal('bankModal')">View Bank QR</button>
-      </div>
+        <div id="khaltiModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('khaltiModal')">&times;</span>
+                <h2>Khalti Payment</h2>
+                <img src="Assets/Logo/Khalti.png" alt="Khalti QR Code">
+            </div>
+        </div>
 
-      <div class="payment-card">
-        <img src="Assets/Logo/paypal.png" alt="PayPal Logo">
-        <h2>PayPal</h2>
-        <p>Send money internationally using PayPal.</p>
-        <button class="view-btn paypal" onclick="showModal('paypalModal')">View PayPal QR</button>
-      </div>
+        <div id="bankModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bankModal')">&times;</span>
+                <h2>Bank Payment</h2>
+                <img src="Assets/Logo/BANK.png" alt="Bank QR Code">
+            </div>
+        </div>
+        <div id="paypalModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('paypalModal')">&times;</span>
+                <h2>PayPal Payment</h2>
+                <img src="Assets/Logo/paypalqr.png" alt="PayPal QR Code">
+            </div>
+        </div>    
+        <div id="payoneerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('payoneerModal')">&times;</span>
+                <h2>Payoneer Payment</h2>
+                <img src="Assets/Logo/payoneer.png" alt="Payoneer QR Code">
+            </div>
+        </div>
 
-      <div class="payment-card">
-        <img src="Assets/Logo/payoneer.png" alt="Payoneer Logo">
-        <h2>Payoneer</h2>
-        <p>Global payment made easy with Payoneer.</p>
-        <button class="view-btn payoneer" onclick="showModal('payoneerModal')">View Payoneer QR</button>
-      </div>
-    </div>
-  </div>
+        <script>
+            // Function to show modal
+            function showModal(modalId) {
+                document.getElementById(modalId).style.display = "flex";
+            }
 
-  <!-- Modals -->
-  <div id="esewaModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('esewaModal')">&times;</span>
-      <h2>eSewa Payment</h2>
-      <img src="Assets/Logo/Esewa.jpg" alt="eSewa QR Code">
-    </div>
-  </div>
+            // Function to close modal
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+            }
 
-  <div id="imepayModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('imepayModal')">&times;</span>
-      <h2>IMEPay Payment</h2>
-      <img src="Assets/Logo/IMEPAY.png" alt="IMEPay QR Code">
-    </div>
-  </div>
-
-  <div id="khaltiModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('khaltiModal')">&times;</span>
-      <h2>Khalti Payment</h2>
-      <img src="Assets/Logo/Khalti.png" alt="Khalti QR Code">
-    </div>
-  </div>
-
-  <div id="bankModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('bankModal')">&times;</span>
-      <h2>Bank Payment</h2>
-      <img src="Assets/Logo/BANK.png" alt="Bank QR Code">
-    </div>
-  </div>
-
-  <div id="paypalModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('paypalModal')">&times;</span>
-      <h2>PayPal Payment</h2>
-      <img src="Assets/Logo/paypalqr.png" alt="PayPal QR Code">
-    </div>
-  </div>
-
-  <div id="payoneerModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('payoneerModal')">&times;</span>
-      <h2>Payoneer Payment</h2>
-      <img src="Assets/Logo/payoneer.png" alt="Payoneer QR Code">
-    </div>
-  </div>
-
-  <script>
-    function showModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-    window.onclick = function(event) {
-      let modals = document.getElementsByClassName("modal");
-      for (let modal of modals) {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      }
-    }
-  </script>
+            // Close modal if clicked outside of modal content
+            window.onclick = function(event) {
+                let modals = document.getElementsByClassName("modal");
+                for (let modal of modals) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+        </script>
 
 </body>
 </html>
