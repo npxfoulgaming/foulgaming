@@ -1,210 +1,165 @@
-/* Global Styles */
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap';
+    /* Global Styles */
+    @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap';
 
-html {
+    html {
     background: url(banner.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-}
+    background-size: cover
+    }                
 
-body {
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 90%;
+    }
 
-/* Glass Container */
-.container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 30px 40px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 90%;
-    color: #fff;
-}
-
-/* Payment Button Styles */
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.payment-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 220px;
-    height: 60px;
-    margin: 10px;
-    border: none;
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    backdrop-filter: blur(6px);
-    overflow: hidden;
-}
-
-.payment-button img {
-    height: 28px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.payment-button:hover img {
-    transform: scale(1.1);
-}
-
-.payment-button:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Glow effect on hover */
-.payment-button::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.payment-button:hover::after {
-    opacity: 1;
-}
-
-/* Individual Payment Gradients */
-.payment-button.esewa {
-    background: linear-gradient(135deg, #4CAF50, #93eb96);
-}
-
-.payment-button.imepay {
-    background: linear-gradient(135deg, #f2994a, #f2c94c);
-}
-
-.payment-button.khalti {
-    background: linear-gradient(135deg, #7b2ff7, #f107a3);
-}
-
-.payment-button.bank {
-    background: linear-gradient(135deg, #f1c232, #c4c26b);
-}
-
-.payment-button.payoneer {
-    background: linear-gradient(135deg, #f7971e, #ffd200);
-}
-
-.payment-button.paypal {
-    background: linear-gradient(135deg, #0070ba, #1546a0);
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    width: 80%;
-    animation: zoomIn 0.3s;
-    position: relative;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-    font-size: 24px;
-}
-
-.modal-content img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.modal-content img:hover {
-    transform: scale(1.1);
-}
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+    /* Payment Button Styles */
     .button-container {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
     }
-
     .payment-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 50px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .payment-button img {
+        height: 30px;
+        margin-right: 10px;
+    }
+    .payment-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .payment-button:focus {
+        outline: none;
+    }
+    .payment-button.esewa { background-color: #93eb96; color: litegreen; }
+    .payment-button.imepay { background-color: #dd9063; color: lightred; }
+    .payment-button.khalti { background-color: #8054cc; color: purple; }
+    .payment-button.bank { background-color: #c4c26b; color: darkyellow; }
+    .payment-button.payoneer { background-color: #ffc000; color: yellow; }
+    .payment-button.paypal { background-color: #00457c; color: blue; }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
         width: 100%;
-        margin: 10px 0;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        align-items: center;
+        justify-content: center;
     }
-
     .modal-content {
-        width: 90%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        width: 80%;
+        animation: zoomIn 0.3s;
+        position: relative; /* Added for positioning close button */
     }
-}
+    .modal-content h2 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+    .modal-content img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .modal-content img:hover {
+        transform: scale(1.1);
+    }
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+    }
 
-/* Keyframes for Animation */
-@keyframes zoomIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
-}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .button-container {
+            flex-direction: column;
+        }
+        .payment-button {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .modal-content {
+            width: 90%;
+        }
+    }
 
-/* Text Colors */
-.white1_text { color: #a9c2e5; font-weight: 500; }
-.green_text { color: #008533; font-weight: 500; }
-.yellow_text { color: #f1c232; font-weight: 500; }
-.black_text { color: #2e2c2c; font-weight: 500; }
-.white_text { color: #f8f8f8; font-weight: 500; }
-.blue_text { color: #6fa8dc; font-weight: 500; }
+    /* Keyframes for Animation */
+    @keyframes zoomIn {
+        from { transform: scale(0); }
+        to { transform: scale(1); }
+    }
+    .white1_text {
+    color: #a9c2e5;
+    font-weight: 500
+    }
+    .green_text {
+        color: #008533;
+        font-weight: 500
+    }
+    .yellow_text {
+        color: #f1c232;
+        font-weight: 500
+    }
+    .black_text {
+        color: #2e2c2c;
+        font-weight: 500
+    }
+    .white_text {
+        color: #f8f8f8;
+        font-weight: 500
+    }
+    .blue_text {
+        color: #6fa8dc;
+        font-weight: 500
+    }
