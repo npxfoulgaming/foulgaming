@@ -1,165 +1,131 @@
-    /* Global Styles */
-    @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:700&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    html {
-    background: url(banner.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
-    }                
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #232323);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .container {
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        max-width: 90%;
-    }
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
 
-    /* Payment Button Styles */
-    .button-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-    .payment-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 50px;
-        margin: 10px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: transform 0.3s, background-color 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .payment-button img {
-        height: 30px;
-        margin-right: 10px;
-    }
-    .payment-button:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .payment-button:focus {
-        outline: none;
-    }
-    .payment-button.esewa { background-color: #93eb96; color: litegreen; }
-    .payment-button.imepay { background-color: #dd9063; color: lightred; }
-    .payment-button.khalti { background-color: #8054cc; color: purple; }
-    .payment-button.bank { background-color: #c4c26b; color: darkyellow; }
-    .payment-button.payoneer { background-color: #ffc000; color: yellow; }
-    .payment-button.paypal { background-color: #00457c; color: blue; }
+.page-title {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 40px;
+}
 
-    /* Modal Styles */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-        align-items: center;
-        justify-content: center;
-    }
-    .modal-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        width: 80%;
-        animation: zoomIn 0.3s;
-        position: relative; /* Added for positioning close button */
-    }
-    .modal-content h2 {
-        margin-top: 0;
-        font-size: 24px;
-    }
-    .modal-content img {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
-        border-radius: 10px;
-        margin-top: 10px;
-        transition: transform 0.3s ease-in-out;
-    }
-    .modal-content img:hover {
-        transform: scale(1.1);
-    }
-    .close {
-        color: #aaa;
-        font-size: 28px;
-        font-weight: bold;
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        cursor: pointer;
-    }
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-    }
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .button-container {
-            flex-direction: column;
-        }
-        .payment-button {
-            width: 100%;
-            margin: 10px 0;
-        }
-        .modal-content {
-            width: 90%;
-        }
-    }
+.payment-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
 
-    /* Keyframes for Animation */
-    @keyframes zoomIn {
-        from { transform: scale(0); }
-        to { transform: scale(1); }
-    }
-    .white1_text {
-    color: #a9c2e5;
-    font-weight: 500
-    }
-    .green_text {
-        color: #008533;
-        font-weight: 500
-    }
-    .yellow_text {
-        color: #f1c232;
-        font-weight: 500
-    }
-    .black_text {
-        color: #2e2c2c;
-        font-weight: 500
-    }
-    .white_text {
-        color: #f8f8f8;
-        font-weight: 500
-    }
-    .blue_text {
-        color: #6fa8dc;
-        font-weight: 500
-    }
+.payment-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.payment-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.payment-card h2 {
+  margin: 10px 0 8px;
+  font-size: 1.4rem;
+  color: #00ff99;
+}
+
+.payment-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.view-btn {
+  background-color: #00ff99;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #00cc77;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  background: #1b1b1b;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  max-width: 90%;
+  width: 500px;
+  box-shadow: 0 0 20px rgba(0, 255, 150, 0.3);
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #00ff99;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
